@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Salma Istrimirantri Agustin – Portofolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Serif:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{bg:'var(--bg)',card:'var(--card)',ink:'var(--ink)',mute:'var(--mute)',brand:'var(--brand)',onbrand:'var(--onbrand)',gold:'var(--gold)',line:'var(--line)'},fontFamily:{serif:['"Noto Serif"','Georgia','serif'],sans:['Montserrat','system-ui','sans-serif']}}}}
+</script>
+<style>
+:root{--bg:#FFF9F2;--card:#fff;--ink:#2f3a2b;--mute:#5f665a;--brand:#424B3C;--onbrand:#FFF9F2;--gold:#8f6f2e;--line:#e6dcc8;--blob:#b08d4a55;--blob2:#42603a40;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161b13;--card:#222a1e;--ink:#f3ecdc;--mute:#b7bdac;--brand:#56624d;--onbrand:#fff9f2;--gold:#e0bb72;--line:#38412f;--blob:#e0bb7230;--blob2:#6f8a5e40;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#161b13;--card:#222a1e;--ink:#f3ecdc;--mute:#b7bdac;--brand:#56624d;--onbrand:#fff9f2;--gold:#e0bb72;--line:#38412f;--blob:#e0bb7230;--blob2:#6f8a5e40;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 4.5rem)}
+body{background:var(--bg);color:var(--ink);font-family:Montserrat,system-ui,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+#bar{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:3px;background:var(--gold);transform-origin:0 50%;transform:scaleX(0);z-index:80}
+#spot{position:fixed;inset:0;pointer-events:none;z-index:5;background:radial-gradient(420px circle at var(--cx,50%) var(--cy,30%),var(--blob),transparent 70%)}
+.pill{border:1px solid var(--line);transition:background .2s,color .2s,border-color .2s,transform .2s}
+.pill[aria-pressed=true],.pill[aria-selected=true]{background:var(--brand);color:var(--onbrand);border-color:var(--brand)}
+.hl{background:linear-gradient(var(--gold),var(--gold)) 0 100%/0 2px no-repeat;transition:background-size .25s,color .2s}
+.hl:hover,.hl.on{background-size:100% 2px;color:var(--ink)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.ttl::after{content:"";display:block;height:3px;width:0;background:var(--gold);margin-top:.7rem;transition:width .9s .25s}
+.ttl.in::after{width:4.5rem}
+.fade{animation:f .45s backwards}@keyframes f{from{opacity:0;transform:translateY(14px) scale(.97)}}
+.ch{display:inline-block;opacity:0;transform:translateY(60%) rotate(6deg);animation:ch .7s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes ch{to{opacity:1;transform:none}}
+#cur::after{content:"|";margin-left:2px;color:var(--gold);animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);animation:dr 14s ease-in-out infinite alternate}
+@keyframes dr{to{transform:translate(40px,-30px) scale(1.15)}}
+.orbit{--R:7.6rem;position:relative;width:calc(var(--R)*2 + 3rem);height:calc(var(--R)*2 + 3rem);margin:auto}
+@media(min-width:640px){.orbit{--R:10rem}}
+.ring{position:absolute;inset:1.5rem;border:1.5px dashed var(--gold);border-radius:50%;animation:sp 28s linear infinite;opacity:.8}
+.chip{position:absolute;top:50%;left:50%;width:0;height:0;transform:rotate(var(--a)) translateX(var(--R))}
+.chip b{position:absolute;transform:rotate(calc(-1*var(--a)))}
+.chip em{display:block;transform:translate(-50%,-50%);font-style:normal;font-size:.7rem;font-weight:600;padding:.35rem .7rem;border-radius:999px;background:var(--card);border:1px solid var(--line);white-space:nowrap;animation:spr 28s linear infinite;box-shadow:0 4px 14px #0002}
+@keyframes sp{to{transform:rotate(360deg)}}
+@keyframes spr{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(-360deg)}}
+.spin{animation:sp 28s linear infinite}
+.stage{position:absolute;left:1.5rem;right:1.5rem;top:-5rem;bottom:1.5rem;pointer-events:none;clip-path:inset(0 round 0 0 var(--R) var(--R))}
+.me{position:absolute;bottom:0;left:50%;height:calc((var(--R)*2 + 3rem)*1.83);width:auto;max-width:none;transform:translateX(-46%)}
+.mono{animation:fl 5s ease-in-out infinite alternate}@keyframes fl{to{transform:translateY(-12px)}}
+.mq{display:flex;width:max-content;animation:mq 34s linear infinite}.mqw:hover .mq{animation-play-state:paused}@keyframes mq{to{transform:translateX(-50%)}}
+.tilt{transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .15s,border-color .2s;position:relative;overflow:hidden}
+.tilt::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(200px circle at var(--mx,50%) var(--my,50%),#ffffff26,transparent 70%);opacity:0;transition:opacity .2s}
+.tilt:hover::after{opacity:1}
+.mag{transition:transform .2s}
+#toast{position:fixed;left:50%;bottom:calc(1.5rem + env(safe-area-inset-bottom,0px));transform:translate(-50%,40px);opacity:0;transition:.3s;z-index:90}
+#toast.on{transform:translate(-50%,0);opacity:1}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv,.ch{opacity:1;transform:none}}
+</style>
+</head>
+<body class="antialiased leading-relaxed">
+<div id="bar"></div><div id="spot" aria-hidden="true"></div>
+
+<header class="sticky z-50 bg-bg/85 backdrop-blur border-b border-line" style="top:env(safe-area-inset-top,0px)">
+  <nav class="max-w-6xl mx-auto px-5 h-14 flex items-center justify-between" aria-label="Navigasi utama">
+    <a href="#top" class="font-serif font-bold text-lg">Salma</a>
+    <ul id="links" class="hidden md:flex gap-7 text-sm font-medium text-mute"></ul>
+    <div class="flex items-center gap-2">
+      <button id="theme" class="pill rounded-full w-9 h-9 grid place-items-center" aria-label="Ganti tema"><span id="ti">☾</span></button>
+      <button id="burger" class="md:hidden pill rounded-full w-9 h-9 grid place-items-center" aria-label="Buka menu" aria-expanded="false">≡</button>
+    </div>
+  </nav>
+  <ul id="mlinks" class="hidden px-5 pb-4 grid gap-3 text-sm font-medium"></ul>
+</header>
+
+<main id="top" class="relative">
+
+<!-- Hero -->
+<section id="hero" class="relative overflow-hidden">
+  <div class="blob w-80 h-80 -top-10 -left-16" style="background:var(--blob)" data-d="20"></div>
+  <div class="blob w-96 h-96 top-40 right-0" style="background:var(--blob2);animation-delay:-5s" data-d="-30"></div>
+  <div class="relative max-w-6xl mx-auto px-5 pt-16 pb-24 grid md:grid-cols-[1.2fr_1fr] gap-10 items-center">
+    <div>
+      <p class="text-mute text-sm rv">Lulusan Informatika, Universitas Gunadarma</p>
+      <h1 id="name" class="font-serif font-bold text-5xl sm:text-6xl lg:text-7xl leading-[1.08] mt-4 text-brand" aria-label="Salma Istrimirantri Agustin"></h1>
+      <p class="mt-6 text-xl sm:text-2xl font-serif min-h-[2.2rem] rv">Saya seorang <span id="cur" class="text-gold font-bold"></span></p>
+      <p class="mt-5 max-w-xl text-mute rv">Saya membangun model, dashboard, dan aplikasi web dari data mentah sampai bisa dipakai orang.</p>
+      <div class="mt-8 flex flex-wrap gap-3 rv">
+        <a href="#proyek" class="mag rounded-full px-6 py-3 bg-brand text-onbrand text-sm font-semibold">Lihat proyek</a>
+        <a href="#kontak" class="mag rounded-full px-6 py-3 pill text-sm font-semibold">Hubungi saya</a>
+      </div>
+    </div>
+    <div class="orbit" data-d="-12">
+        <div class="absolute inset-6 rounded-full bg-brand"></div>
+        <div class="ring"></div>
+        <div id="chips" class="spin absolute inset-0"></div>
+        <div class="stage">
+          <img src="assets/salma.png" alt="Foto Salma Istrimirantri Agustin" class="me">
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="mqw border-y border-line bg-card py-4 overflow-hidden" aria-hidden="true"><div class="mq" id="mq"></div></div>
+
+<!-- About -->
+<section id="tentang" class="bg-brand text-onbrand">
+  <div class="max-w-6xl mx-auto px-5 py-20 grid md:grid-cols-2 gap-12">
+    <h2 class="font-serif font-bold text-4xl sm:text-5xl rv">Tentang saya</h2>
+    <div class="space-y-5 max-w-xl rv">
+      <p>Saya lulusan Informatika Universitas Gunadarma dengan IPK 3,87/4,00 yang berminat besar pada analisis data, kecerdasan buatan, dan pengembangan aplikasi berbasis web.</p>
+      <p>Saya berpengalaman mengolah dan menganalisis data: preprocessing, Exploratory Data Analysis, visualisasi, sampai interpretasi. Saya juga pernah mengembangkan proyek kecerdasan buatan dan aplikasi web.</p>
+      <p>Saya bisa bekerja sendiri maupun dalam tim, dan terus belajar untuk berkontribusi lewat data dan teknologi.</p>
+      <div class="grid grid-cols-3 gap-4 pt-4 text-center">
+        <div><div class="font-serif text-4xl font-bold"><span data-to="3.87" data-dec="2">0</span></div><div class="text-xs opacity-80">IPK dari 4,00</div></div>
+        <div><div class="font-serif text-4xl font-bold"><span data-to="5">0</span></div><div class="text-xs opacity-80">Proyek</div></div>
+        <div><div class="font-serif text-4xl font-bold"><span data-to="7">0</span></div><div class="text-xs opacity-80">Sertifikat</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education + Experience -->
+<section id="pendidikan" class="max-w-6xl mx-auto px-5 py-20 grid md:grid-cols-2 gap-14">
+  <div>
+    <h2 class="ttl font-serif font-bold text-4xl text-brand rv">Pendidikan</h2>
+    <ol class="mt-8 border-l-2 border-line space-y-8 pl-6" id="edu"></ol>
+  </div>
+  <div id="pengalaman">
+    <h2 class="ttl font-serif font-bold text-4xl text-brand rv">Pengalaman kerja</h2>
+    <div class="tilt mt-8 bg-card border border-line rounded-lg p-6 rv">
+      <h3 class="font-serif font-bold text-xl">Tutor & Asisten LEPKOM</h3>
+      <p class="text-gold text-sm font-semibold mt-1">Lembaga Pengembangan Komputerisasi, Universitas Gunadarma</p>
+      <p class="mt-4 text-mute text-sm">Mendampingi praktikum pemrograman Go (Golang) dan C#. Membantu praktikan memahami materi dan menyelesaikan kendala selama praktikum, serta membantu menginput dan mengelola nilai praktikum.</p>
+      <div class="mt-4 flex gap-2 flex-wrap text-xs"><span class="pill rounded-full px-3 py-1">Go</span><span class="pill rounded-full px-3 py-1">C#</span><span class="pill rounded-full px-3 py-1">Mentoring</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skill" class="bg-card border-y border-line">
+  <div class="max-w-6xl mx-auto px-5 py-20">
+    <h2 class="ttl font-serif font-bold text-4xl text-brand rv">Skill</h2>
+    <div class="mt-8 flex flex-wrap gap-2" role="tablist" id="stabs"></div>
+    <div id="spanel" class="mt-8 flex flex-wrap gap-3"></div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="proyek" class="max-w-6xl mx-auto px-5 py-20">
+  <h2 class="ttl font-serif font-bold text-4xl text-brand rv">Proyek</h2>
+  <p class="text-mute text-sm mt-4 rv">Klik kartu untuk melihat detail.</p>
+  <div class="mt-6 flex flex-wrap gap-2" id="pf"></div>
+  <div id="pgrid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+</section>
+
+<!-- Certs -->
+<section id="sertifikat" class="bg-card border-y border-line">
+  <div class="max-w-6xl mx-auto px-5 py-20">
+    <h2 class="ttl font-serif font-bold text-4xl text-brand rv">Pelatihan dan Sertifikasi</h2>
+    <ul id="cgrid" class="mt-10 grid sm:grid-cols-2 gap-4"></ul>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="kontak" class="max-w-6xl mx-auto px-5 py-20">
+  <div class="relative overflow-hidden bg-brand text-onbrand rounded-lg p-8 sm:p-14 text-center rv">
+    <div class="blob w-64 h-64 -top-16 -right-10" style="background:#e0bb7233"></div>
+    <h2 class="relative font-serif font-bold text-4xl sm:text-5xl">THANK YOU</h2>
+    <div class="relative mt-8 flex flex-wrap justify-center gap-3">
+      <button id="copy" class="mag rounded-full px-6 py-3 bg-onbrand text-brand text-sm font-semibold">Salin email</button>
+      <a href="mailto:agustinsalma2626@gmail.com" class="mag rounded-full px-6 py-3 border border-onbrand/50 text-sm font-semibold">Kirim email</a>
+      <a href="https://instagram.com/ia.salmaa" target="_blank" rel="noopener" class="mag rounded-full px-6 py-3 border border-onbrand/50 text-sm font-semibold">Instagram @ia.salmaa</a>
+      <a href="https://www.linkedin.com/search/results/all/?keywords=Salma%20Istrimirantri%20Agustin" target="_blank" rel="noopener" class="mag rounded-full px-6 py-3 border border-onbrand/50 text-sm font-semibold">LinkedIn</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="text-center text-xs text-mute pb-10">© 2026 Salma Istrimirantri Agustin</footer>
+<div id="toast" class="bg-brand text-onbrand text-sm font-semibold rounded-full px-5 py-2.5" role="status"></div>
+
+<div id="modal" class="hidden fixed inset-0 z-[70] bg-black/60 p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="mt">
+  <div class="fade bg-card max-w-lg mx-auto my-10 rounded-lg p-7 border border-line">
+    <div class="flex justify-between gap-4"><h3 id="mt" class="font-serif font-bold text-2xl text-brand"></h3><button id="mx" class="pill rounded-full w-9 h-9 shrink-0" aria-label="Tutup">✕</button></div>
+    <p id="mc" class="text-gold text-sm font-semibold mt-1"></p>
+    <p id="md" class="mt-4 text-mute text-sm"></p>
+    <ul id="mh" class="mt-4 space-y-2 text-sm list-disc pl-5"></ul>
+    <div id="mtech" class="mt-5 flex flex-wrap gap-2 text-xs"></div>
+    <a id="ml" class="hidden mt-6 inline-block rounded-full px-5 py-2.5 bg-brand text-onbrand text-sm font-semibold" target="_blank" rel="noopener">Buka prototype di Figma</a>
+  </div>
+</div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches,HV=matchMedia('(hover:hover)').matches;
+
+// Nav
+const nav=[['tentang','Tentang'],['pendidikan','Pendidikan'],['pengalaman','Pengalaman'],['skill','Skill'],['proyek','Proyek'],['sertifikat','Sertifikat'],['kontak','Kontak']];
+const lk=nav.map(([i,t])=>`<li><a class="hl" data-s="${i}" href="#${i}">${t}</a></li>`).join('');
+$('#links').innerHTML=lk;$('#mlinks').innerHTML=lk;
+$('#burger').onclick=e=>{const o=$('#mlinks').classList.toggle('hidden');e.currentTarget.setAttribute('aria-expanded',!o)};
+$('#mlinks').onclick=e=>{if(e.target.tagName==='A'){$('#mlinks').classList.add('hidden')}};
+
+// Theme
+const root=document.documentElement,dark=()=>root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches,icon=()=>$('#ti').textContent=dark()?'☀':'☾';icon();
+$('#theme').onclick=()=>{root.dataset.theme=dark()?'light':'dark';icon()};
+
+// Name letters
+let k=0;$('#name').innerHTML='Salma Istrimirantri Agustin'.split(' ').map(w=>`<span class="inline-block whitespace-nowrap" aria-hidden="true">${[...w].map(c=>`<span class="ch" style="animation-delay:${(k++)*45}ms">${c}</span>`).join('')}</span>`).join(' ');
+
+// Typing
+const roles=['Data Analyst','Machine Learning Enthusiast','Web Developer','UI/UX Designer'];let ri=0,ci=0,del=false;
+function tick(){const w=roles[ri];$('#cur').textContent=w.slice(0,ci);
+ if(!del&&ci===w.length){del=true;return setTimeout(tick,1600)}
+ if(del&&ci===0){del=false;ri=(ri+1)%roles.length}
+ ci+=del?-1:1;setTimeout(tick,del?40:80)}
+RM?$('#cur').textContent=roles.join(' | '):tick();
+
+// Orbit chips + marquee
+const oc=['Python','Flask','Figma','Laravel','Go','MySQL'];
+$('#chips').innerHTML=oc.map((t,i)=>`<i class="chip" style="--a:${i*60}deg"><b><em>${t}</em></b></i>`).join('');
+const mqi=['Python','Flask','JavaScript','Tailwind CSS','Laravel','PHP','MySQL','Go','C#','Figma','EfficientNetB0','Pandas','GitHub'];
+const m=mqi.map(t=>`<span class="font-serif font-bold text-xl text-mute px-8 whitespace-nowrap">${t} <span class="text-gold">✦</span></span>`).join('');
+$('#mq').innerHTML=m+m;
+
+// Education
+$('#edu').innerHTML=[['2022 – 2026','Informatika, Fakultas Teknologi Informasi','Universitas Gunadarma'],['2018 – 2021','Jurusan MIPA','SMA Negeri 1 Ciamis'],['2015 – 2018','Sekolah menengah pertama','SMP Negeri 1 Ciamis']]
+.map(([y,t,s],i)=>`<li class="relative rv" style="transition-delay:${i*150}ms"><span class="absolute -left-[33px] top-1.5 w-3.5 h-3.5 rounded-full bg-gold ring-4 ring-bg"></span><p class="text-gold text-sm font-semibold">${y}</p><p class="font-semibold">${t}</p><p class="text-mute text-sm">${s}</p></li>`).join('');
+
+// Skills
+const skills={'Software':['Microsoft Word','PowerPoint','Excel','VS Code','Visual Studio','Google Colab','Figma','XAMPP','Canva','GitHub'],'Programming':['HTML','CSS','JavaScript','Python','MySQL','Go'],'Framework':['Flask','Tailwind CSS'],'Personal':['Kerja sama dalam tim','Komunikasi lisan dan tulisan','Disiplin dan bertanggung jawab','Manajemen waktu','Berpikir analitis','Pemecahan masalah yang logis','Etika kerja yang kuat']};
+let sk='Software';
+function rs(){$('#stabs').innerHTML=Object.keys(skills).map(x=>`<button role="tab" aria-selected="${x===sk}" data-k="${x}" class="pill rounded-full px-5 py-2 text-sm font-semibold">${x}</button>`).join('');
+ $('#spanel').innerHTML=skills[sk].map((s,i)=>`<span class="fade pill rounded-lg px-4 py-2.5 text-sm bg-bg font-medium hover:-translate-y-1 hover:border-gold cursor-default" style="animation-delay:${i*50}ms">${s}</span>`).join('')}
+$('#stabs').onclick=e=>{const x=e.target.dataset.k;if(x){sk=x;rs()}};rs();
+
+// Projects
+const P=[
+{n:'NutriSnap',c:'ai',cat:'AI & Data',d:'Aplikasi web untuk memantau konsumsi dan asupan gizi harian. Data diolah dan dianalisis, lalu model klasifikasi citra makanan dihubungkan ke database nutrisi.',h:['Klasifikasi citra makanan dengan CNN','Model EfficientNetB0 (machine learning)','Rule-Based System dengan forward chaining untuk menilai pola makan dan merekomendasikan makanan'],t:['Python','Flask','JavaScript','HTML','Tailwind CSS','MySQL']},
+{n:'Inventoris Toko JeWePe',c:'web',cat:'Web · Sertifikasi LSP-BNSP',d:'Aplikasi web untuk mengelola inventaris toko, dibuat sebagai proyek sertifikasi LSP-BNSP.',h:['Pengelolaan data barang dan kategori','Pengelolaan stok','Pencatatan transaksi barang masuk dan keluar','Dashboard dan laporan'],t:['Laravel','PHP','JavaScript','HTML','CSS','MySQL']},
+{n:'WorkWise',c:'ux',cat:'UI/UX · GEMASTIK 2024',d:'Aplikasi pencari kerja untuk penyandang disabilitas, dibuat untuk GEMASTIK 2024 divisi Pengembangan Perangkat Lunak. Peran saya: UI/UX Designer.',h:['Merancang user flow','Membuat wireframe','Mendesain antarmuka aplikasi'],t:['Figma'],l:'#'},
+{n:'JobIn',c:'ux',cat:'UI/UX · Mata kuliah IMK',d:'Platform web yang menghubungkan perusahaan dengan pekerja lepas. Perusahaan bisa mencari kandidat, dan pencari kerja bisa menampilkan portofolio dan keterampilan. Peran saya: UI/UX Designer.',h:['Merancang user flow','Membuat wireframe','Mendesain antarmuka aplikasi'],t:['Figma'],l:'#'},
+{n:'Website Lily Florist',c:'web',cat:'Web & UI · Mata kuliah PPPL',d:'Platform web untuk pemasaran online toko bunga Lily Florist, dengan katalog bunga dan halaman admin.',h:['Katalog bunga','Pengelolaan data produk oleh admin','Pencatatan laporan keuangan'],t:['Figma'],l:'#'}];
+const F=[['all','Semua'],['ai','AI & Data'],['web','Web'],['ux','UI/UX']];let pf='all';
+function rp(){$('#pf').innerHTML=F.map(([x,t])=>`<button class="pill rounded-full px-5 py-2 text-sm font-semibold" aria-pressed="${x===pf}" data-k="${x}">${t}</button>`).join('');
+ $('#pgrid').innerHTML=P.map((p,i)=>({p,i})).filter(({p})=>pf==='all'||p.c===pf).map(({p,i},j)=>`<button data-i="${i}" style="animation-delay:${j*80}ms" class="fade tilt text-left bg-card border border-line hover:border-gold rounded-lg p-6">
+ <p class="text-gold text-xs font-semibold">${p.cat}</p><h3 class="font-serif font-bold text-xl mt-2">${p.n}</h3><p class="mt-3 text-sm text-mute line-clamp-3">${p.d}</p>
+ <div class="mt-4 flex flex-wrap gap-1.5 text-xs">${p.t.slice(0,4).map(x=>`<span class="pill rounded-full px-2.5 py-0.5">${x}</span>`).join('')}</div></button>`).join('')}
+$('#pf').onclick=e=>{const x=e.target.dataset.k;if(x){pf=x;rp()}};
+let last;
+$('#pgrid').onclick=e=>{const b=e.target.closest('[data-i]');if(!b)return;last=b;const p=P[b.dataset.i];
+ $('#mt').textContent=p.n;$('#mc').textContent=p.cat;$('#md').textContent=p.d;
+ $('#mh').innerHTML=p.h.map(x=>`<li>${esc(x)}</li>`).join('');
+ $('#mtech').innerHTML=p.t.map(x=>`<span class="pill rounded-full px-3 py-1">${x}</span>`).join('');
+ const l=$('#ml');p.l?(l.href=p.l,l.classList.remove('hidden')):l.classList.add('hidden');
+ $('#modal').classList.remove('hidden');document.body.style.overflow='hidden';$('#mx').focus()};
+const close=()=>{$('#modal').classList.add('hidden');document.body.style.overflow='';last&&last.focus()};
+$('#mx').onclick=close;$('#modal').onclick=e=>{if(e.target.id==='modal')close()};
+addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#modal').classList.contains('hidden'))close()});rp();
+
+// Tilt (event delegation, works for re-rendered cards)
+if(HV&&!RM){
+ document.addEventListener('pointermove',e=>{
+  const c=e.target.closest&&e.target.closest('.tilt');
+  if(c){const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+   c.style.setProperty('--ry',((x-.5)*10)+'deg');c.style.setProperty('--rx',((.5-y)*10)+'deg');c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%')}
+  const s=$('#spot').style;s.setProperty('--cx',e.clientX+'px');s.setProperty('--cy',e.clientY+'px');
+  const h=$('#hero').getBoundingClientRect();
+  if(e.clientY<h.bottom){const dx=e.clientX/innerWidth-.5,dy=e.clientY/innerHeight-.5;$$('[data-d]').forEach(el=>{const d=+el.dataset.d;el.style.translate=`${dx*d*2}px ${dy*d*2}px`})}
+ });
+ document.addEventListener('pointerout',e=>{const c=e.target.closest&&e.target.closest('.tilt');if(c){c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg')}});
+ // Magnetic buttons
+ $$('.mag').forEach(b=>{b.onpointermove=e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`};b.onpointerleave=()=>b.style.transform=''});
+}else $('#spot').remove();
+
+// Certificates
+const C=[['Sistem Manajemen Basis Data','Februari 2023'],['Pemrograman Berbasis Web','Agustus 2023'],['Go Language for Beginner','Februari 2024'],['C# Language for Beginner','Agustus 2024'],['Go Language for Intermediate','Februari 2025'],['C# Language for Intermediate','Agustus 2025']];
+$('#cgrid').innerHTML=C.map(([t,d],i)=>`<li class="rv flex justify-between gap-4 items-center bg-bg border border-line rounded-lg px-5 py-4 hover:translate-x-2 hover:border-gold transition" style="transition-delay:${(i%2)*100}ms"><div><p class="font-semibold text-sm">${t}</p><p class="text-xs text-mute">Universitas Gunadarma</p></div><span class="text-gold text-xs font-semibold whitespace-nowrap">${d}</span></li>`).join('')
++`<li class="rv sm:col-span-2 flex justify-between gap-4 items-center bg-brand text-onbrand rounded-lg px-5 py-4"><div><p class="font-semibold text-sm">Sertifikasi Junior Web Programmer</p><p class="text-xs opacity-80">BNSP</p></div><span class="text-xs font-semibold whitespace-nowrap">10 Juni 2026</span></li>`;
+
+// Toast + copy
+function toast(t){const o=$('#toast');o.textContent=t;o.classList.add('on');setTimeout(()=>o.classList.remove('on'),2200)}
+$('#copy').onclick=async()=>{try{await navigator.clipboard.writeText('agustinsalma2626@gmail.com');toast('Email tersalin: agustinsalma2626@gmail.com')}catch(_){toast('Email: agustinsalma2626@gmail.com')}};
+
+// Reveal, counters, progress, active nav
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+$$('.rv').forEach(el=>io.observe(el));
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);const to=+e.target.dataset.to,dec=+(e.target.dataset.dec||0),t0=performance.now();
+ const f=n=>{const p=Math.min((n-t0)/1400,1);e.target.textContent=(to*(1-Math.pow(1-p,3))).toFixed(dec).replace('.',',');if(p<1)requestAnimationFrame(f)};RM?e.target.textContent=String(to).replace('.',','):requestAnimationFrame(f)}),{threshold:.6});
+$$('[data-to]').forEach(el=>co.observe(el));
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('#links a').forEach(a=>a.classList.toggle('on',a.dataset.s===e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+nav.forEach(([i])=>so.observe($('#'+i)));
+addEventListener('scroll',()=>{const h=document.documentElement;$('#bar').style.transform=`scaleX(${scrollY/(h.scrollHeight-innerHeight||1)})`},{passive:true});
+</script>
+</body>
+</html>
